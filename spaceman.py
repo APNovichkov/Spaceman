@@ -1,4 +1,5 @@
 from random import choice
+import re
 
 
 def load_word():
@@ -45,13 +46,20 @@ def print_welcome_message():
 
 
 def get_input_letter():
+    letter_input = ""
 
-    return input("Please enter a letter: ")
+    while True:
+        letter_input = input("Please enter a letter: ")
+        if validate_input(letter_input):
+            break
+        else:
+            print("You entered an invalid letter, try again!")
+
+    return letter_input.lower()
 
 
-def validate_input():
-    # TODO
-    pass
+def validate_input(input):
+    return len(input) == 1 and input.isalpha()
 
 
 def main():
