@@ -71,6 +71,8 @@ def main():
 
     strikes_remaining = 7
 
+    print_welcome_message()
+
     while strikes_remaining > 0 and not is_word_guessed(chosen_word_in_chars, letters_guessed):
         print("The length of the word is: " + str(length_of_chosen_word) + " and you have " + str(strikes_remaining) + " strikes remaining")
         input_letter = get_input_letter()
@@ -78,6 +80,7 @@ def main():
 
         if not is_guess_in_word(input_letter, chosen_word_in_chars):
             strikes_remaining -= 1
+            print("Incorrect guess")
 
         print(get_guessed_word(chosen_word_in_chars, letters_guessed))
 
