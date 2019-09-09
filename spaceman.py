@@ -86,7 +86,7 @@ def main():
 
         letters_guessed = []
 
-        strikes_remaining = 7
+        strikes_remaining = length_of_chosen_word
 
         # Game control
         while strikes_remaining > 0 and not is_word_guessed(chosen_word_in_chars, letters_guessed):
@@ -114,6 +114,7 @@ def main():
             print("------------------------------------------------")
         else:
             print("Sad to see you go, hope to see you soon again!!")
+            break
 
 
 if __name__ == "__main__":
