@@ -74,6 +74,24 @@ def validate_input(input):
     return len(input) == 1 and input.isalpha()
 
 
+def test_is_guess_in_word():
+    assert is_guess_in_word('a', ['f', 'a', 'l', 'l']) == True
+    assert is_guess_in_word('b', ['b', 'o', 'b']) == True
+
+
+def test_validate_input():
+    assert validate_input('4') == False
+    assert validate_input('A') == True
+    assert validate_input('a') == True
+    assert validate_input('') == False
+
+
+def test_is_word_guessed():
+    assert is_word_guessed(['a', 'b', 's'], ['a', 'b', 's']) == True
+    assert is_word_guessed(['a', 'b', 's'], []) == False
+    assert is_word_guessed(['a', 'b', 's'], ['a', 'b', 'd', 'n']) == False
+
+
 def main():
 
     print_welcome_message()
