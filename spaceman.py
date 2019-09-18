@@ -12,7 +12,7 @@ def print_red(input_string):
 def load_word():
     possible_words = []
 
-    with open("/Users/andreynovichkov/Desktop/Make-School/Term-1/CS1-1/9.3/spaceman/words_to_use.txt", "r") as f:
+    with open("words_to_use.txt", "r") as f:
         for line in f:
             for word in line.split(" "):
                 possible_words.append(word)
